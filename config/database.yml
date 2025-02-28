@@ -1,0 +1,21 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  username: postgres
+  password: senha_segura
+  host: localhost
+
+development:
+  <<: *default
+  database: gestao_condominios_development
+
+test:
+  <<: *default
+  database: gestao_condominios_test
+
+production:
+  <<: *default
+  database: gestao_condominios_production
+  username: gestao_condominios
+  password: <%= ENV["GESTAO_CONDOMINIOS_DATABASE_PASSWORD"] %>

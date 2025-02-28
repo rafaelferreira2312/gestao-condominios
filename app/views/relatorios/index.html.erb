@@ -1,0 +1,17 @@
+<h1>Relatórios</h1>
+
+<%= form_with url: gerar_relatorio_relatorios_path, method: :get do |form| %>
+  <div>
+    <%= form.label :data_inicio, "Data Início" %>
+    <%= form.date_field :data_inicio %>
+  </div>
+
+  <div>
+    <%= form.label :data_fim, "Data Fim" %>
+    <%= form.date_field :data_fim %>
+  </div>
+
+  <div>
+    <%= form.submit "Gerar Relatório", class: "btn btn-primary" %>
+  </div>
+<% end %>

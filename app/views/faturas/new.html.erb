@@ -1,0 +1,29 @@
+<h1><%= action_name.capitalize %> Fatura</h1>
+
+<%= form_with model: @fatura do |form| %>
+  <div>
+    <%= form.label :condominio_id, "Condomínio" %>
+    <%= form.collection_select :condominio_id, Condominio.all, :id, :nome, prompt: "Selecione um condomínio" %>
+  </div>
+
+  <div>
+    <%= form.label :valor %>
+    <%= form.number_field :valor, step: 0.01 %>
+  </div>
+
+  <div>
+    <%= form.label :data_vencimento %>
+    <%= form.date_field :data_vencimento %>
+  </div>
+
+  <div>
+    <%= form.label :tipo_servico %>
+    <%= form.text_field :tipo_servico %>
+  </div>
+
+  <div>
+    <%= form.submit "Salvar", class: "btn btn-primary" %>
+  </div>
+<% end %>
+
+<%= link_to "Voltar", faturas_path, class: "btn btn-secondary" %>

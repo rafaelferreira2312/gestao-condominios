@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Gestão de Condomínios</title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+
+  <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+  <%= javascript_include_tag "application", "data-turbo-track": "reload" %>
+</head>
+
+<body>
+  <header>
+    <nav>
+      <%= link_to "Home", root_path %>
+      <%= link_to "Faturas", faturas_path %>
+      <%= link_to "Condomínios", condominios_path %>
+      <%= link_to "Relatórios", relatorios_path %>
+      <% if usuario_signed_in? %>
+        <%= link_to "Sair", destroy_usuario_session_path, method: :delete %>
+      <% else %>
+        <%= link_to "Entrar", new_usuario_session_path %>
+        <%= link_to "Registrar", new_usuario_registration_path %>
+      <% end %>
+    </nav>
+  </header>
+
+  <main>
+    <%= yield %>
+  </main>
+
+  <footer>
+    <p>&copy; 2023 Gestão de Condomínios. Todos os direitos reservados.</p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<h1>Condomínios</h1>
+
+<%= link_to "Novo Condomínio", new_condominio_path, class: "btn btn-primary" %>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nome</th>
+      <th>Endereço</th>
+      <th>Código Único</th>
+      <th>Ações</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @condominios.each do |condominio| %>
+      <tr>
+        <td><%= condominio.nome %></td>
+        <td><%= condominio.endereco %></td>
+        <td><%= condominio.codigo_unico %></td>
+        <td>
+          <%= link_to "Ver", condominio_path(condominio) %>
+          <%= link_to "Editar", edit_condominio_path(condominio) %>
+          <%= link_to "Excluir", condominio_path(condominio), method: :delete, data: { confirm: "Tem certeza?" } %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

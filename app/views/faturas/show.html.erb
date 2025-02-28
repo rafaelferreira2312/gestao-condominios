@@ -1,0 +1,8 @@
+<h1>Detalhes da Fatura</h1>
+
+<p><strong>Condomínio:</strong> <%= @fatura.condominio.nome %></p>
+<p><strong>Valor:</strong> <%= formatar_moeda(@fatura.valor) %></p>
+<p><strong>Data de Vencimento:</strong> <%= formatar_data(@fatura.data_vencimento) %></p>
+<p><strong>Tipo de Serviço:</strong> <%= @fatura.tipo_servico %></p>
+
+<%= link_to "Voltar", faturas_path, class: "btn btn-secondary" %>

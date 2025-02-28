@@ -1,0 +1,20 @@
+# Ignora arquivos de log e temporários
+/log/*
+/tmp/*
+!/log/.keep
+!/tmp/.keep
+
+# Ignora arquivos de banco de dados
+/db/*.sqlite3
+/db/*.sqlite3-*
+
+# Ignora arquivos de ambiente
+.env
+.env.local
+
+# Ignora pasta de dependências
+/vendor/bundle
+
+# Ignora arquivos do sistema
+.idea
+.DS_Store

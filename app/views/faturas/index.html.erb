@@ -1,0 +1,30 @@
+<h1>Faturas</h1>
+
+<%= link_to "Nova Fatura", new_fatura_path, class: "btn btn-primary" %>
+
+<table>
+  <thead>
+    <tr>
+      <th>Condomínio</th>
+      <th>Valor</th>
+      <th>Data de Vencimento</th>
+      <th>Tipo de Serviço</th>
+      <th>Ações</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @faturas.each do |fatura| %>
+      <tr>
+        <td><%= fatura.condominio.nome %></td>
+        <td><%= formatar_moeda(fatura.valor) %></td>
+        <td><%= formatar_data(fatura.data_vencimento) %></td>
+        <td><%= fatura.tipo_servico %></td>
+        <td>
+          <%= link_to "Ver", fatura_path(fatura) %>
+          <%= link_to "Editar", edit_fatura_path(fatura) %>
+          <%= link_to "Excluir", fatura_path(fatura), method: :delete, data: { confirm: "Tem certeza?" } %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

@@ -1,0 +1,16 @@
+en:
+  hello: "Hello world"
+  activerecord:
+    models:
+      condominio: "Condominium"
+      fatura: "Invoice"
+      servico: "Service"
+    attributes:
+      condominio:
+        nome: "Name"
+        endereco: "Address"
+        codigo_unico: "Unique Code"
+      fatura:
+        valor: "Amount"
+        data_vencimento: "Due Date"
+        tipo_servico: "Service Type"

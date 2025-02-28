@@ -1,0 +1,7 @@
+<h1>Detalhes do Condomínio</h1>
+
+    <p><strong>Nome:</strong> <%= @condominio.nome %></p>
+    <p><strong>Endereço:</strong> <%= @condominio.endereco %></p>
+    <p><strong>Código Único:</strong> <%= @condominio.codigo_unico %></p>
+    
+    <%= link_to "Voltar", condominios_path, class: "btn btn-secondary" %>

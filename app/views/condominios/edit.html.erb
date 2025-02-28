@@ -1,0 +1,24 @@
+<h1><%= action_name.capitalize %> Condomínio</h1>
+
+<%= form_with model: @condominio do |form| %>
+  <div>
+    <%= form.label :nome %>
+    <%= form.text_field :nome %>
+  </div>
+
+  <div>
+    <%= form.label :endereco %>
+    <%= form.text_field :endereco %>
+  </div>
+
+  <div>
+    <%= form.label :codigo_unico %>
+    <%= form.text_field :codigo_unico %>
+  </div>
+
+  <div>
+    <%= form.submit "Salvar", class: "btn btn-primary" %>
+  </div>
+<% end %>
+
+<%= link_to "Voltar", condominios_path, class: "btn btn-secondary" %>
